@@ -29,31 +29,32 @@ const checkWin = () => {
         if ((boxText[e[0]].innerText === boxText[e[1]].innerText) && (boxText[e[2]].innerText === boxText[e[1]].innerText) && boxText[e[0]].innerText !== '') {
             document.querySelector(".info").innerText = boxText[e[0]].innerText + " WON"
             isGameOver = true
-        }
-        let a = document.querySelector('.info').innerText
-        if (a === "X WON" || a === "0 WON") {
             document.querySelector(".ImgBox").getElementsByTagName('img')[0].style.width = "120px"
-            document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won";
-            // bgMusic.play()
-            let boxes = document.getElementsByClassName("box")
-            Array.from(boxes).forEach(element => {
-                let boxText = element.querySelector(".boxText")
-                element.addEventListener('click', () => {
-                    if (boxText.innerText === '') {
-                        boxText.innerText = turn
-                        turn = changeTurn()
-                        TurnAudio.play()
-                        checkWin()
-                        if (!isGameOver) {
-
-                        }
-                        else {
-                            document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
-                        }
-                    }
-                })
-            })
         }
+        // let a = document.querySelector('.info').innerText
+        // if (a === "X WON" || a === "0 WON") {
+        //     document.querySelector(".ImgBox").getElementsByTagName('img')[0].style.width = "120px"
+        //     document.querySelector('.info').innerText = boxText[e[0]].innerText + " Won";
+        //     // bgMusic.play()
+        //     let boxes = document.getElementsByClassName("box")
+        //     Array.from(boxes).forEach(element => {
+        //         let boxText = element.querySelector(".boxText")
+        //         element.addEventListener('click', () => {
+        //             if (boxText.innerText === '') {
+        //                 boxText.innerText = turn
+        //                 turn = changeTurn()
+        //                 TurnAudio.play()
+        //                 checkWin()
+        //                 if (!isGameOver) {
+
+        //                 }
+        //                 else {
+        //                     document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
+        //                 }
+        //             }
+        //         })
+        //     })
+        // }
     })
 }
 
@@ -68,7 +69,7 @@ Array.from(boxes).forEach(element => {
             turn = changeTurn()
             TurnAudio.play()
             checkWin()
-            if (!isGameOver) {
+            if (isGameOver) {
 
             }
             else {
