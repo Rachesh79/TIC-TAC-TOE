@@ -6,7 +6,8 @@ let gameOver = new Audio("gameover.mp3")
 let turn = "X"
 let isGameOver = false
 
-const changeTurn = () => {
+const
+changeTurn = () => {
     return turn === "X" ? "0" : "X"
 }
 
